@@ -5,7 +5,10 @@
 
 - Burrows–Wheeler Transform (BWT)-based tools, on the other hand, are faster, use less memory, and are suitable for mapping short reads. BWT is a data transformation technique that rearranges the characters in a string into runs of similar characters, making it more efficient for certain types of data compression and indexing.
 
-Choice of alignment tool is often determined by the type of NGS application being conducted. STAR is for RNA-seq data because it is fast and optimized for aligning spliced reads. For ChIP-Seq Bowtie2 is very popular to align the reads because it is fast and accurate. For variant calling BWA (Burrows-Wheeler Aligner) is widely used for alignment.
+Choice of alignment tool may also be determined by the type of NGS application being conducted. 
+- STAR is for RNA-seq data because it is fast and optimized for aligning spliced reads.
+- For ChIP-Seq Bowtie2 is very popular to align the reads because it is fast and accurate.
+- For variant calling BWA (Burrows-Wheeler Aligner) is widely used for alignment.
 
 BWA is generally slower than Bowtie2 with similar sensitivity and both tools can perform gapped alignment for the identification of indels and can effectively map paired-end reads. However, BWA is a bit more accurate and provides information on which alignments are trustworthy. Small numbers of bad alignments can result in many false variant calls, so accuracy is paramount, and is the basis for choosing BWA.
 
@@ -30,6 +33,12 @@ Burrows-Wheeler Aligner (BWA) is a software package for mapping low-divergent se
 - BWA-SW: designed for longer sequences ranging from 70bp to 1Mbp, long-read support and split alignment
 
 - BWA-MEM: shares similar features to BWA-SW, but BWA-MEM is the latest, and is generally recommended for high-quality queries as it is faster and more accurate. BWA-MEM also has better performance than BWA-backtrack for 70-100bp Illumina reads.
+
+## Yess, we passed the boring parts!! Congrats 🍻
+
+
+##  Lets begin with Files
+
 
 ### BWA outputs alignment in the SAM format to take the advantage of the downstream analyses implemented in SAMtools.
 
