@@ -20,7 +20,6 @@ NovoAlign uses dynamic programming, taking advantage of Needleman–Wunsch algor
 ### Burrows-Wheeler Transform
 ![bwt](https://github.com/btayhan/Alignment-BWA/assets/144340455/f02ebee7-4d5d-4396-a4b4-5746c567904d)
 
-![Slide1](https://github.com/btayhan/Alignment-BWA/assets/144340455/1a256d5a-9188-4f0b-8326-bf11c5d73e15)
 
 ### Burrows-Wheeler Aligner (BWA) 
 
