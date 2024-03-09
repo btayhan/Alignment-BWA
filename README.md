@@ -1,5 +1,9 @@
 # Alignment-BWA
 
+## Theoretical Part: 
+
+![14bm](https://github.com/btayhan/Alignment-BWA/assets/144340455/175f0314-1a9d-4ad5-9c11-bb2e1c6bb2a8)
+
 - Spaced-seed indexing tools are described as slower and more memory-intensive but are effective at mapping long gaps in sequences. This approach uses patterns (or "seeds") with specific spaces to identify possible alignments before performing a more detailed comparison.
 ![Sequence_Alignment_Example](https://github.com/btayhan/Alignment-BWA/assets/144340455/398261af-e2d0-4bee-a5e8-bc9aa8be793e)
 
@@ -21,7 +25,8 @@ NovoAlign uses dynamic programming, taking advantage of Needleman–Wunsch algor
 
 
 ### Burrows-Wheeler Transform
-![bwt](https://github.com/btayhan/Alignment-BWA/assets/144340455/f02ebee7-4d5d-4396-a4b4-5746c567904d)
+
+
 
 
 ### Burrows-Wheeler Aligner (BWA) 
@@ -35,6 +40,7 @@ Burrows-Wheeler Aligner (BWA) is a software package for mapping low-divergent se
 - BWA-MEM: shares similar features to BWA-SW, but BWA-MEM is the latest, and is generally recommended for high-quality queries as it is faster and more accurate. BWA-MEM also has better performance than BWA-backtrack for 70-100bp Illumina reads.
 
 ## Yess, we passed the boring parts!! Congrats 🍻
+![PhY](https://github.com/btayhan/Alignment-BWA/assets/144340455/9a9463df-e82f-40ef-8b51-20fe6e3b7eae)
 
 
 ##  Lets begin with Files
