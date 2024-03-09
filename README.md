@@ -1,5 +1,10 @@
 # Alignment-BWA
 
+- Spaced-seed indexing tools are described as slower and more memory-intensive but are effective at mapping long gaps in sequences. This approach uses patterns (or "seeds") with specific spaces to identify possible alignments before performing a more detailed comparison.
+![Sequence_Alignment_Example](https://github.com/btayhan/Alignment-BWA/assets/144340455/398261af-e2d0-4bee-a5e8-bc9aa8be793e)
+
+- Burrows–Wheeler Transform (BWT)-based tools, on the other hand, are faster, use less memory, and are suitable for mapping short reads. BWT is a data transformation technique that rearranges the characters in a string into runs of similar characters, making it more efficient for certain types of data compression and indexing.
+
 Choice of alignment tool is often determined by the type of NGS application being conducted. STAR is for RNA-seq data because it is fast and optimized for aligning spliced reads. For ChIP-Seq Bowtie2 is very popular to align the reads because it is fast and accurate. For variant calling BWA (Burrows-Wheeler Aligner) is widely used for alignment.
 
 BWA is generally slower than Bowtie2 with similar sensitivity and both tools can perform gapped alignment for the identification of indels and can effectively map paired-end reads. However, BWA is a bit more accurate and provides information on which alignments are trustworthy. Small numbers of bad alignments can result in many false variant calls, so accuracy is paramount, and is the basis for choosing BWA.
@@ -13,8 +18,10 @@ NovoAlign uses dynamic programming, taking advantage of Needleman–Wunsch algor
 
 
 ### Burrows-Wheeler Transform
+![bwt](https://github.com/btayhan/Alignment-BWA/assets/144340455/f02ebee7-4d5d-4396-a4b4-5746c567904d)
 
 ### Burrows-Wheeler Aligner (BWA) 
+
 Burrows-Wheeler Aligner (BWA) is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. It consists of three algorithms: BWA-backtrack, BWA-SW and BWA-MEM. Depending on read length, BWA modes can be chatagorized as:
 
 - BWA-backtrack: designed for Illumina sequence reads up to 100bp
