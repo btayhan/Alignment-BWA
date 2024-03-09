@@ -8,7 +8,6 @@ Burrows-Wheeler Aligner (BWA) is a software package for mapping low-divergent se
 The Integrative Genomics Viewer (IGV) is a high-performance, easy-to-use, interactive tool for the visual exploration of genomic data. It supports flexible integration of all the common types of genomic data and metadata, investigator-generated or publicly available, loaded from local or cloud sources.
 
 To Download IGV to Cluster:
-'''
-wget https://data.broadinstitute.org/igv/projects/downloads/2.17/IGV_Linux_2.17.3_WithJava.zip
-'''
+'''wget https://data.broadinstitute.org/igv/projects/downloads/2.17/IGV_Linux_2.17.3_WithJava.zip
+
 
