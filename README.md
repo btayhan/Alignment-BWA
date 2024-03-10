@@ -232,11 +232,10 @@ igv.sh
 ```
 Wait a bit...
 ### Here are the results:
+![igv](https://github.com/btayhan/Alignment-BWA/assets/144340455/09fcad2e-580c-4add-ad2b-a3ad9e879d3f)
 
-![igv](https://github.com/btayhan/Alignment-BWA/assets/144340455/07798e0f-c6a5-44ad-95e8-5ef0a5042272)
+![igv2](https://github.com/btayhan/Alignment-BWA/assets/144340455/1efcb14f-d812-44b2-917e-a0ec8dd8bad0)
 
-
-![igv2](https://github.com/btayhan/Alignment-BWA/assets/144340455/d7b20154-da03-4180-9c01-683c21f5ee40)
 
 For more information about IGV please click:
 https://www.youtube.com/watch?v=woKXw1R8LMA&ab_channel=BioinformaticsDotCa
