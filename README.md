@@ -230,7 +230,7 @@ Now, we can go back to our file (6_alignment) and write:
 igv.sh
 ```
 Wait a bit...
-### Here Are the results:
+### Here are the results:
 
 ![igv](https://github.com/btayhan/Alignment-BWA/assets/144340455/07798e0f-c6a5-44ad-95e8-5ef0a5042272)
 
@@ -243,10 +243,15 @@ https://www.youtube.com/watch?v=woKXw1R8LMA&ab_channel=BioinformaticsDotCa
 
 ### References
 [1]	L. Donato, C. Scimone, C. Rinaldi, R. D’Angelo, and A. Sidoti, “New evaluation methods of read mapping by 17 aligners on simulated and empirical NGS data: an updated comparison of DNA- and RNA-Seq data from Illumina and Ion Torrent technologies,” Neural Comput Appl, vol. 33, no. 22, p. 15669, Nov. 2021, doi: 10.1007/S00521-021-06188-Z.
+
 [2]	S. Schaarschmidt, A. Fischer, E. Zuther, and D. K. Hincha, “Evaluation of Seven Different RNA-Seq Alignment Tools Based on Experimental Data from the Model Plant Arabidopsis thaliana,” Int J Mol Sci, vol. 21, no. 5, Mar. 2020, doi: 10.3390/IJMS21051720.
+
 [3]	H. Li and R. Durbin, “Fast and accurate short read alignment with Burrows–Wheeler transform,” Bioinformatics, vol. 25, no. 14, p. 1754, Jul. 2009, doi: 10.1093/BIOINFORMATICS/BTP324.
+
 [4]	R. Musich, L. Cadle-Davidson, and M. V. Osier, “Comparison of Short-Read Sequence Aligners Indicates Strengths and Weaknesses for Biologists to Consider,” Front Plant Sci, vol. 12, p. 657240, Apr. 2021, doi: 10.3389/FPLS.2021.657240/BIBTEX.
+
 [5]	A. Dobin et al., “STAR: ultrafast universal RNA-seq aligner,” Bioinformatics, vol. 29, no. 1, p. 15, Jan. 2013, doi: 10.1093/BIOINFORMATICS/BTS635.
+
 [6]	B. Langmead and S. L. Salzberg, “Fast gapped-read alignment with Bowtie 2,” Nat Methods, vol. 9, no. 4, p. 357, Apr. 2012, doi: 10.1038/NMETH.1923.
 
 https://www.youtube.com/watch?v=woKXw1R8LMA&ab_channel=BioinformaticsDotCa
