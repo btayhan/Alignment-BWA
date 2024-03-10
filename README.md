@@ -4,10 +4,9 @@
 
 ![14bm](https://github.com/btayhan/Alignment-BWA/assets/144340455/175f0314-1a9d-4ad5-9c11-bb2e1c6bb2a8)
 
-With the advent of next-generation DNA sequencing technologies, the volume of sequence data has increased exponentially. Mapping this vast quantity of sequencing reads to large genomes presents significant challenges to existing sequence alignment programs. These challenges stem not only from the sheer volume of data but also from the complexity of the genomic landscape, including variations and repetitive sequences. To address the need for both efficient and accurate read mapping, numerous new alignment programs have been developed. These tools employ advanced computational algorithms to meet the dual demands of speed and precision, which are crucial for analyzing sequencing data and extracting meaningful biological insights. The common alignment tools are based on (1) spaced-seed indexing or (2) Burrows–Wheeler transform: 
+With the advent of next-generation DNA sequencing technologies, the volume of sequence data has increased exponentially. Mapping this vast quantity of sequencing reads to large genomes presents significant challenges to existing sequence alignment programs [1]. These challenges stem not only from the sheer volume of data but also from the complexity of the genomic landscape, including variations and repetitive sequences [1]. To address the need for both efficient and accurate read mapping, numerous new alignment programs have been developed [1][2]. These tools employ advanced computational algorithms to meet the dual demands of speed and precision, which are crucial for analyzing sequencing data and extracting meaningful biological insights [2]. The common alignment tools are based on (1) spaced-seed indexing or (2) Burrows–Wheeler transform: 
 
-- Spaced-seed indexing tools are described as slower and more memory-intensive but are effective at mapping long gaps in sequences. This approach uses patterns (or "seeds") with specific spaces to identify possible alignments before performing a more detailed comparison.
-
+- Spaced-seed indexing tools are described as slower and more memory-intensive but are effective at mapping long gaps in sequences. This approach uses patterns (or "seeds") with specific spaces to identify possible alignments before performing a more detailed comparison[2].
 ![Sequence_Alignment_Example](https://github.com/btayhan/Alignment-BWA/assets/144340455/398261af-e2d0-4bee-a5e8-bc9aa8be793e)
 
 Figure 1. Spaced-seed indexing
@@ -28,7 +27,7 @@ The spaced seed pattern is represented as a sequence of zeroes and ones, where "
 
 </details>
 
-- Burrows–Wheeler Transform (BWT)-based tools, on the other hand, are faster, use less memory, and are suitable for mapping short reads. BWT is a data transformation technique that rearranges the characters in a string into runs of similar characters, making it more efficient for certain types of data compression and indexing. BWA and Bowtie2 are index-based aligners exploiting Burrows–Wheeler indexing algorithm.
+- Burrows–Wheeler Transform (BWT)-based tools, on the other hand, are faster, use less memory, and are suitable for mapping short reads[2]. BWT is a data transformation technique that rearranges the characters in a string into runs of similar characters, making it more efficient for certain types of data compression and indexing. BWA and Bowtie2 are index-based aligners exploiting Burrows–Wheeler indexing algorithm[3].
 
    ![bwt](https://github.com/btayhan/Alignment-BWA/assets/144340455/1496d2cd-518b-45e8-a9ec-37942c512078)
 
@@ -51,32 +50,32 @@ For the word "catch," the Burrows-Wheeler Transform (BWT) is 'cht$ca', and the c
 </details>
 
 
-The choice of an alignment tool in next-generation sequencing (NGS) applications is critical and depends on the specific requirements of the dataset and the goals of the research. Different alignment tools are optimized for different types of data and analyses. Here's an expanded explanation of why certain tools are preferred for specific NGS applications:
+The choice of an alignment tool in next-generation sequencing (NGS) applications is critical and depends on the specific requirements of the dataset and the goals of the research[4]. Different alignment tools are optimized for different types of data and analyses. Here's an expanded explanation of why certain tools are preferred for specific NGS applications:
 
 #### Considerations for Tool Selection
-- Data Type and Quality: The nature of the NGS data (e.g., read length, quality, and type of sequencing) can influence which aligner will provide the best results.
-- Analysis Goals: The specific objectives of the study, such as identifying splice variants, protein-DNA interactions, or genetic variants, guide the choice of the most appropriate alignment tool.
+- Data Type and Quality: The nature of the NGS data (e.g., read length, quality, and type of sequencing) can influence which aligner will provide the best results[1].
+- Analysis Goals: The specific objectives of the study, such as identifying splice variants, protein-DNA interactions, or genetic variants, guide the choice of the most appropriate alignment tool[2].
 - Computational Resources: The availability of computational power and memory can also dictate the choice of tools, as some aligners require more computational resources than others.
 
 #### STAR for RNA-seq Data
-- RNA-seq involves sequencing RNA to study gene expression, splicing patterns, and other transcriptomic features.
-- STAR (Spliced Transcripts Alignment to a Reference) is designed to efficiently handle the complexities of RNA-seq data, such as splicing. It can rapidly align RNA-seq reads to a reference genome by recognizing exon-exon junctions, a common feature in mRNA sequences that results from splicing.
-- Its speed and efficiency stem from an advanced algorithm that creates a highly optimized hash table of the reference genome, allowing for quick mapping of RNA sequences, including those that are spliced. This makes STAR particularly suitable for large-scale RNA-seq datasets.
+- RNA-seq involves sequencing RNA to study gene expression, splicing patterns, and other transcriptomic features [5].
+- STAR (Spliced Transcripts Alignment to a Reference) is designed to efficiently handle the complexities of RNA-seq data, such as splicing. It can rapidly align RNA-seq reads to a reference genome by recognizing exon-exon junctions, a common feature in mRNA sequences that results from splicing [5].
+- Its speed and efficiency stem from an advanced algorithm that creates a highly optimized hash table of the reference genome, allowing for quick mapping of RNA sequences, including those that are spliced. This makes STAR particularly suitable for large-scale RNA-seq datasets [5].
 #### Bowtie2 for ChIP-Seq
-- ChIP-Seq (Chromatin Immunoprecipitation Sequencing) is used to analyze protein interactions with DNA. It identifies the binding sites of DNA-associated proteins.
-- Bowtie2 is favored for ChIP-Seq because it combines speed with a flexible and sensitive alignment strategy. It is capable of aligning reads with mismatches, gaps, or clippings, which are important features for accurately mapping the short reads typical of ChIP-Seq datasets to a reference genome.
-- Bowtie2 uses the Burrows–Wheeler Transform (BWT) for efficient memory usage, making it capable of handling the large datasets generated by ChIP-Seq experiments while still providing accurate alignments.
+- ChIP-Seq (Chromatin Immunoprecipitation Sequencing) is used to analyze protein interactions with DNA. It identifies the binding sites of DNA-associated proteins[6].
+- Bowtie2 is favored for ChIP-Seq because it combines speed with a flexible and sensitive alignment strategy. It is capable of aligning reads with mismatches, gaps, or clippings, which are important features for accurately mapping the short reads typical of ChIP-Seq datasets to a reference genome[6].
+- Bowtie2 uses the Burrows–Wheeler Transform (BWT) for efficient memory usage, making it capable of handling the large datasets generated by ChIP-Seq experiments while still providing accurate alignments[6].
 #### BWA for Variant Calling
-- Variant calling involves identifying variations from a reference genome, such as SNPs (Single Nucleotide Polymorphisms), insertions, and deletions.
-- BWA (Burrows-Wheeler Aligner) is widely used for its effectiveness in aligning sequencing reads (especially longer reads) to large reference genomes like the human genome. This capability is crucial for variant calling, where precise alignment is necessary to accurately identify genomic variations.
-- BWA's algorithms (such as BWA-MEM for longer reads) are designed to be fast and memory-efficient, enabling the processing of large genomic datasets required for comprehensive variant analysis. Its accuracy in mapping allows for reliable variant detection, making it a standard tool in many genomics workflows.
+- Variant calling involves identifying variations from a reference genome, such as SNPs (Single Nucleotide Polymorphisms), insertions, and deletions[3].
+- BWA (Burrows-Wheeler Aligner) is widely used for its effectiveness in aligning sequencing reads (especially longer reads) to large reference genomes like the human genome[3]. This capability is crucial for variant calling, where precise alignment is necessary to accurately identify genomic variations.
+- BWA's algorithms (such as BWA-MEM for longer reads) are designed to be fast and memory-efficient, enabling the processing of large genomic datasets required for comprehensive variant analysis. Its accuracy in mapping allows for reliable variant detection, making it a standard tool in many genomics workflows[3].
 
-BWA is generally slower than Bowtie2 with similar sensitivity and both tools can perform gapped alignment for the identification of indels and can effectively map paired-end reads. However, BWA is a bit more accurate and provides information on which alignments are trustworthy. Small numbers of bad alignments can result in many false variant calls, so accuracy is paramount, and is the basis for choosing BWA.
+BWA is generally slower than Bowtie2 with similar sensitivity and both tools can perform gapped alignment for the identification of indels and can effectively map paired-end reads. However, BWA is a bit more accurate and provides information on which alignments are trustworthy. Small numbers of bad alignments can result in many false variant calls, so accuracy is paramount, and is the basis for choosing BWA[1][2].
 
 
 ### Burrows-Wheeler Aligner (BWA) 
 
-Burrows-Wheeler Aligner (BWA) is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. It consists of three algorithms: BWA-backtrack, BWA-SW and BWA-MEM. Depending on read length, BWA modes can be catagorized as:
+Burrows-Wheeler Aligner (BWA) is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. It consists of three algorithms: BWA-backtrack, BWA-SW and BWA-MEM[3]. Depending on read length, BWA modes can be catagorized as:
 
 | Modes |                            Applications                                      |
 |------:|-----------------------------------------------------------------------------|
@@ -243,6 +242,15 @@ https://www.youtube.com/watch?v=woKXw1R8LMA&ab_channel=BioinformaticsDotCa
 
 
 ### References
+[1]	L. Donato, C. Scimone, C. Rinaldi, R. D’Angelo, and A. Sidoti, “New evaluation methods of read mapping by 17 aligners on simulated and empirical NGS data: an updated comparison of DNA- and RNA-Seq data from Illumina and Ion Torrent technologies,” Neural Comput Appl, vol. 33, no. 22, p. 15669, Nov. 2021, doi: 10.1007/S00521-021-06188-Z.
+[2]	S. Schaarschmidt, A. Fischer, E. Zuther, and D. K. Hincha, “Evaluation of Seven Different RNA-Seq Alignment Tools Based on Experimental Data from the Model Plant Arabidopsis thaliana,” Int J Mol Sci, vol. 21, no. 5, Mar. 2020, doi: 10.3390/IJMS21051720.
+[3]	H. Li and R. Durbin, “Fast and accurate short read alignment with Burrows–Wheeler transform,” Bioinformatics, vol. 25, no. 14, p. 1754, Jul. 2009, doi: 10.1093/BIOINFORMATICS/BTP324.
+[4]	R. Musich, L. Cadle-Davidson, and M. V. Osier, “Comparison of Short-Read Sequence Aligners Indicates Strengths and Weaknesses for Biologists to Consider,” Front Plant Sci, vol. 12, p. 657240, Apr. 2021, doi: 10.3389/FPLS.2021.657240/BIBTEX.
+[5]	A. Dobin et al., “STAR: ultrafast universal RNA-seq aligner,” Bioinformatics, vol. 29, no. 1, p. 15, Jan. 2013, doi: 10.1093/BIOINFORMATICS/BTS635.
+[6]	B. Langmead and S. L. Salzberg, “Fast gapped-read alignment with Bowtie 2,” Nat Methods, vol. 9, no. 4, p. 357, Apr. 2012, doi: 10.1038/NMETH.1923.
+
+https://www.youtube.com/watch?v=woKXw1R8LMA&ab_channel=BioinformaticsDotCa
+https://www.youtube.com/watch?v=1wcFavYt6uU&ab_channel=BioinformaticsCoach
 
 
 
