@@ -159,6 +159,7 @@ Many downstream tools, such as those used for variant calling, require indexed f
 ### Visualization with Samtools
 For command-line visualization, samtools tview is a text-based viewer for sequence alignments in SAM/BAM format. While not as visually comprehensive as graphical tools, tview can be useful for quick checks and is easily run on a cluster. Run samtools tview directly on the cluster via a terminal:
 ```
+module load samtools-1.9-gcc-9.2.0-w7pulwi
 samtools tview sorted.bam index/Agy99.fasta
 ```
 
@@ -196,6 +197,52 @@ This part is required to add this program into user's path:
 unzip IGV_Linux_2.17.3_WithJava.zip
 
 ```
+
+#### We should add this program into our path to compute everywhere basically:
+
+In your home directory:
+```
+mkdir app
+mv IGV_Linux_2.17.3
+cd app/IGV_Linux_2.17.3
+pwd
+```
+Copy your pathway(It is possible to look like that):
+```
+/cta/users/btayhan/apps/IGV_Linux_2.17.3
+```
+Then it is recommended to create a backup of your .bashrc file:
+```
+cp .bahsrc bahsrc.bak
+```
+Then go to your .bahsrc file (with vi, nano, up to you):
+```
+nano .bahsrc
+```
+
+go to the end and write `export PATH=$PATH:` add your path. Here is an example:
+
+```
+export PATH=$PATH:/cta/users/btayhan/apps/IGV_Linux_2.17.3
+```
+## Now we passed the technical part!! Showtime?
+Now, we can go back to our file (6_alignment) and write:
+```
+igv.sh
+```
+Wait a bit...
+### Here Are the results:
+
+![igv](https://github.com/btayhan/Alignment-BWA/assets/144340455/07798e0f-c6a5-44ad-95e8-5ef0a5042272)
+
+
+![igv2](https://github.com/btayhan/Alignment-BWA/assets/144340455/d7b20154-da03-4180-9c01-683c21f5ee40)
+
+For more information about IGV please click:
+https://www.youtube.com/watch?v=woKXw1R8LMA&ab_channel=BioinformaticsDotCa
+
+
+### References
 
 
 
