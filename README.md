@@ -7,6 +7,7 @@
 With the advent of next-generation DNA sequencing technologies, the volume of sequence data has increased exponentially. Mapping this vast quantity of sequencing reads to large genomes presents significant challenges to existing sequence alignment programs [1]. These challenges stem not only from the sheer volume of data but also from the complexity of the genomic landscape, including variations and repetitive sequences [1]. To address the need for both efficient and accurate read mapping, numerous new alignment programs have been developed [1][2]. These tools employ advanced computational algorithms to meet the dual demands of speed and precision, which are crucial for analyzing sequencing data and extracting meaningful biological insights [2]. The common alignment tools are based on (1) spaced-seed indexing or (2) Burrows–Wheeler transform: 
 
 - Spaced-seed indexing tools are described as slower and more memory-intensive but are effective at mapping long gaps in sequences. This approach uses patterns (or "seeds") with specific spaces to identify possible alignments before performing a more detailed comparison[2].
+  
 ![Sequence_Alignment_Example](https://github.com/btayhan/Alignment-BWA/assets/144340455/398261af-e2d0-4bee-a5e8-bc9aa8be793e)
 
 Figure 1. Spaced-seed indexing
